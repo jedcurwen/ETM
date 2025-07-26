@@ -1,0 +1,29 @@
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+private slots:
+    void on_createUserBtn_clicked();
+    void on_loginBtn_clicked();
+    void on_forgottenPassword_clicked();
+
+    void invalidCredentials();
+    void openUserWindow(QString userRole, QString username);
+
+private:
+    Ui::MainWindow *ui;
+};
+#endif // MAINWINDOW_H
